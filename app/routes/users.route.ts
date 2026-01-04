@@ -1,5 +1,5 @@
 import { Hono } from "hono";
-import { registerUser, getUserById, updateUserProfile, deleteUser } from "@/services/user";
+import { registerUser, getUserById, updateUserProfile, deleteUser } from "@/app/services/user";
 
 export const usersRoute = new Hono()
   .post("/", async (c) => {

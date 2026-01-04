@@ -1,6 +1,6 @@
 import { Hono } from "hono";
 import { handle } from "hono/vercel";
-import { registerUser, getUserById } from "@/services/user";
+import { registerUser, getUserById } from "@/app/services/user";
 
 const app = new Hono().basePath("/api");
 

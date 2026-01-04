@@ -3,7 +3,7 @@ import { MySqlContainer } from "@testcontainers/mysql";
 import type { StartedMySqlContainer } from "@testcontainers/mysql";
 import { drizzle } from "drizzle-orm/mysql2";
 import mysql from "mysql2/promise";
-import * as userRepo from "@/repositories/user";
+import * as userRepo from "@/app/repositories/user";
 
 let container: StartedMySqlContainer;
 let connection: mysql.Pool;
@@ -22,7 +22,7 @@ beforeAll(async () => {
   testDb = drizzle(connection);
 
   // Override db module with test db
-  const dbModule = await import("@/lib/db");
+  const dbModule = await import("@/app/lib/db");
   (dbModule as any).db = testDb;
 
   // Create schema

@@ -14,13 +14,13 @@ Next.js + Hono + Drizzle ORM アーキテクチャテンプレート
 
 ```
 ├── app/                      # Next.js App Router
+│   ├── (pages)/             # UIページ
 │   ├── api/[[...route]]/    # Hono API Route Handler
-│   └── (pages)/             # UIページ
-├── routes/                   # Controller層（オプション）
-├── services/                 # ビジネスロジック
-├── repositories/             # データアクセス層
+│   ├── routes/              # Controller層（オプション）
+│   ├── services/            # ビジネスロジック
+│   ├── repositories/        # データアクセス層
+│   └── lib/                 # ユーティリティ
 ├── db/                       # スキーマ & マイグレーション
-├── lib/                      # ユーティリティ
 ├── __tests__/               # テスト
 └── docker/                   # 開発用DB
 ```
@@ -87,8 +87,8 @@ http://localhost:3000 でアクセス可能
 ### 機能追加の流れ
 
 1. **スキーマ定義**: `db/schema.ts`
-2. **Repository作成**: `repositories/`
-3. **Service作成**: `services/`
+2. **Repository作成**: `app/repositories/`
+3. **Service作成**: `app/services/`
 4. **APIエンドポイント追加**: `app/api/[[...route]]/route.ts`
 5. **テスト作成**: `__tests__/`
 

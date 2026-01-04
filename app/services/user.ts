@@ -1,4 +1,4 @@
-import * as userRepo from "@/repositories/user";
+import * as userRepo from "@/app/repositories/user";
 
 export async function registerUser(input: { name: string; email: string }) {
   // ビジネスルール検証
